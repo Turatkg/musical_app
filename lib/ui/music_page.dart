@@ -11,76 +11,38 @@ class MusicPage extends StatelessWidget {
       child: Column(
         children: [
           Expanded(
-            child: ElevatedButton(
-              onPressed: () {
-                player.play('do.mp3');
-              },
-              child: Container(
-                color: Colors.red,
-              ),
-            ),
+            child: buildElevatedButton('do', Colors.red),
           ),
           Expanded(
-            child: ElevatedButton(
-              onPressed: () {
-                player.play('re.mp3');
-              },
-              child: Container(
-                color: Colors.orange,
-              ),
-            ),
+            child: buildElevatedButton('re', Colors.orange),
           ),
           Expanded(
-            child: ElevatedButton(
-              onPressed: () {
-                player.play('mi.mp3');
-              },
-              child: Container(
-                color: Colors.yellow,
-              ),
-            ),
+            child: buildElevatedButton('mi', Colors.yellow),
           ),
           Expanded(
-            child: ElevatedButton(
-              onPressed: () {
-                player.play('fa.mp3');
-              },
-              child: Container(
-                color: Colors.green,
-              ),
-            ),
+            child: buildElevatedButton('fa', Colors.green),
           ),
           Expanded(
-            child: ElevatedButton(
-              onPressed: () {
-                player.play('sol.mp3');
-              },
-              child: Container(
-                color: Colors.lightGreen[900],
-              ),
-            ),
+            child: buildElevatedButton('sol', Colors.lightGreen[900]),
           ),
           Expanded(
-            child: ElevatedButton(
-              onPressed: () {
-                player.play('lja.mp3');
-              },
-              child: Container(
-                color: Colors.lightBlueAccent,
-              ),
-            ),
+            child: buildElevatedButton('lja', Colors.lightBlueAccent),
           ),
           Expanded(
-            child: ElevatedButton(
-              onPressed: () {
-                player.play('si.mp3');
-              },
-              child: Container(
-                color: Colors.purple,
-              ),
-            ),
+            child: buildElevatedButton('si', Colors.purple),
           ),
         ],
+      ),
+    );
+  }
+
+  ElevatedButton buildElevatedButton(String nota, Color tus) {
+    return ElevatedButton(
+      onPressed: () {
+        player.play(nota);
+      },
+      child: Container(
+        color: tus,
       ),
     );
   }
